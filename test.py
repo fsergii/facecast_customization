@@ -1,11 +1,8 @@
-from pyspark import SparkConf
-from pyspark.sql import SparkSession
-
-
 import os
 from pyspark import SparkConf
 from pyspark import SparkContext
 from pyspark.sql import SparkSession
+
 os.environ['PYSPARK_PYTHON'] = 'python3'
 spark_master = os.getenv('SPARK_MASTER', 'k8s://https://kubernetes.default.svc.cluster.local')
 spark = SparkSession.builder \
