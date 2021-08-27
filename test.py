@@ -4,7 +4,7 @@ from pyspark import SparkContext
 from pyspark.sql import SparkSession
 
 os.environ['PYSPARK_PYTHON'] = 'python3'
-spark_master = os.getenv('k8s://https://kubernetes.default.svc.cluster.local')
+spark_master = 'k8s://https://kubernetes.default.svc.cluster.local'
 spark = SparkSession.builder \
     .master(spark_master) \
     .config("spark.driver.maxResultSize", 0) \
