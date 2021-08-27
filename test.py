@@ -13,13 +13,15 @@ spark = SparkSession.builder \
  
 sc = spark.sparkContext
 
-data = sc.parallelize(list("Hello World"))  
-counts = data.map(lambda x: (x, 1)).reduceByKey(add).sortBy(lambda x: x[1], ascending=False).collect()  
-for (word, count) in counts:  
-    print("{}: {}".format(word, count))  
-sc.stop()
+# data = sc.parallelize(list("Hello World"))  
+# counts = data.map(lambda x: (x, 1)).reduceByKey(add).sortBy(lambda x: x[1], ascending=False).collect()  
+# for (word, count) in counts:  
+    # print("{}: {}".format(word, count))  
+# sc.stop()
 
 # rdd = sc.parallelize([1,2,3,4,5,6,7,8,9,10]).cache()
 # rdd.saveAsTextFile('spark_test.txt')
 
-# print(sc.parallelize([1.0, 2.0, 3.0]).sum())
+print(sc.parallelize([1.0, 2.0, 3.0]).sum())
+
+sc.stop()
